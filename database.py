@@ -13,3 +13,10 @@ class Database:
             if user.user_id == user_id:
                 return user
         return None
+    
+    def remove_user(self, user_id):
+        user = self.get_user_by_id(user_id)
+        if user:
+            self.users.remove(user)
+            return True
+        return False
