@@ -20,3 +20,10 @@ class Database:
             self.users.remove(user)
             return True
         return False
+    
+    def update_username(self, user_id, new_username):
+        user = self.get_user_by_id(user_id)
+        if user:
+            user.username = new_username
+            return True
+        return False

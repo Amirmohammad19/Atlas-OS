@@ -9,7 +9,7 @@ user2 = User(2, "Sara")
 db.add_user(user1)
 db.add_user(user2)
 
-db.remove_user(1)
+db.update_username(2, "Sarah")
 
 for user in db.get_users():
     print(user)
