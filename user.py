@@ -5,7 +5,8 @@ class User:
         self.goal = ""
 
     def set_goal(self, goal):
-            self.goal = goal
+        self.goal = goal
     def get_goal(self):
         return self.goal
-    
+    def __str__(self):
+         return f"User(ID={self.user_id}, Username='{self.username}')"
