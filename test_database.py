@@ -9,6 +9,5 @@ user2 = User(2, "Sarah")
 db.add_user(user1)
 db.add_user(user2)
 
-found_user = db.get_user_by_username("Sarah")
-
-print(found_user)
+print(db.user_exists(1))
+print(db.user_exists(3))

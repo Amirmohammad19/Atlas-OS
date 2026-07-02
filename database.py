@@ -33,3 +33,6 @@ class Database:
             if user.username == username:
                 return user
         return None
+    
+    def user_exists(self, user_id):
+        return self.get_user_by_id(user_id) is not None
