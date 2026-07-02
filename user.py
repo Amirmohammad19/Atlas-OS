@@ -1,13 +1,11 @@
-name = input("What's your name? : ")
+class User:
+    def __init__(self, user_id, username):
+        self.user_id = user_id
+        self.username = username
+        self.goal = ""
 
-goal = input("What's your biggest goal? : ")
-
-print()
-
-print("Welcam", name)
-
-print("your Goal is :", goal)
-
-print()
-
-print("Atlas OS Activated 🚀")
+    def set_goal(self, goal):
+            self.goal = goal
+    def get_goal(self):
+        return self.goal
+    
