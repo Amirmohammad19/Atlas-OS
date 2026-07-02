@@ -4,12 +4,11 @@ from user import User
 db = Database()
 
 user1 = User(1, "Amir")
-user2 = User(2, "Sara")
+user2 = User(2, "Sarah")
 
 db.add_user(user1)
 db.add_user(user2)
 
-db.update_username(2, "Sarah")
+found_user = db.get_user_by_username("Sarah")
 
-for user in db.get_users():
-    print(user)
+print(found_user)

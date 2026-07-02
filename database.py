@@ -27,3 +27,9 @@ class Database:
             user.username = new_username
             return True
         return False
+    
+    def get_user_by_username(self, username):
+        for user in self.users:
+            if user.username == username:
+                return user
+        return None
