@@ -39,3 +39,6 @@ class Database:
 
     def get_user_count(self):
         return len(self.users)
+    
+    def clear_users(self):
+        self.users.clear()
