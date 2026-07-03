@@ -9,5 +9,4 @@ user2 = User(2, "Sarah")
 db.add_user(user1)
 db.add_user(user2)
 
-print(db.user_exists(1))
-print(db.user_exists(3))
+print(db.get_user_count())
