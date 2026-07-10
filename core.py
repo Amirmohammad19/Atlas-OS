@@ -18,3 +18,8 @@ class AtlasCore:
 
     def clear_memory(self, user_id):
         self.memory.clear(user_id)
+
+    def process_message(self, user_id, message):
+        self.remember(user_id, message)
+
+        return f"You said: {message}"
