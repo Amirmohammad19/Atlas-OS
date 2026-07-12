@@ -1,3 +1,5 @@
+from command import CommandParser
+from handler import CommandHandler
 from database import Database
 from memory import Memory
 
@@ -6,6 +8,8 @@ class AtlasCore:
     def __init__(self):
         self.database = Database()
         self.memory = Memory()
+        self.parser = CommandParser()
+        self.handler = CommandHandler()
 
     def register_user(self, user):
         return self.database.add_user(user)
@@ -21,5 +25,9 @@ class AtlasCore:
 
     def process_message(self, user_id, message):
         self.remember(user_id, message)
+
+        if self.parser.is_command(message):
+            command = self.parser.get_command(message)
+            return self.handler.handle(command)
 
         return f"You said: {message}"
