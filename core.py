@@ -2,6 +2,7 @@ from command import CommandParser
 from handler import CommandHandler
 from database import Database
 from memory import Memory
+from response import ResponseEngine
 
 
 class AtlasCore:
@@ -10,6 +11,7 @@ class AtlasCore:
         self.memory = Memory()
         self.parser = CommandParser()
         self.handler = CommandHandler()
+        self.response = ResponseEngine()
 
     def register_user(self, user):
         return self.database.add_user(user)
@@ -30,4 +32,4 @@ class AtlasCore:
             command = self.parser.get_command(message)
             return self.handler.handle(command)
 
-        return f"You said: {message}"
+        return self.response.generate(message)
