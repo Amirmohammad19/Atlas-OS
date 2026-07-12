@@ -3,6 +3,7 @@ from handler import CommandHandler
 from database import Database
 from memory import Memory
 from response import ResponseEngine
+from session import SessionManager
 
 
 class AtlasCore:
@@ -12,6 +13,7 @@ class AtlasCore:
         self.parser = CommandParser()
         self.handler = CommandHandler()
         self.response = ResponseEngine()
+        self.session = SessionManager()
 
     def register_user(self, user):
         return self.database.add_user(user)
@@ -33,3 +35,14 @@ class AtlasCore:
             return self.handler.handle(command)
 
         return self.response.generate(message)
+    
+    def set_session(self, user_id, key, value):
+        self.session.set(user_id, key, value)
+
+
+    def get_session(self, user_id, key):
+        return self.session.get(user_id, key)
+
+
+    def clear_session(self, user_id):
+        self.session.clear(user_id)
