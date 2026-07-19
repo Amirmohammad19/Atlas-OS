@@ -1,0 +1,7 @@
+BOT_TOKEN = "8959588177:AAFZL10qR_mDhVwemSnD5mYXcRuAlpl5Bps"
+
+BOT_NAME = "Atlas"
+
+VERSION = "0.1.0"
+
+DEBUG = True
